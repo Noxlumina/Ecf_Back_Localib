@@ -11,8 +11,8 @@ import java.util.List;
 @RequestMapping("/locations")
 public class LocationController {
 
-    private LocationServiceImpl locationService;
-    public LocationController(LocationServiceImpl locationService) {
+    private LocationService locationService;
+    public LocationController(LocationService locationService) {
         this.locationService = locationService;
     }
     @GetMapping

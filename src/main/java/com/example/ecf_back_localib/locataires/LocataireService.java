@@ -31,10 +31,4 @@ public interface LocataireService {
      */
     void deleteById(String id);
 
-    /**
-     * Méthode permettant de trouver un locataire à partir de son email
-     * @param email
-     * @return un locataire
-     */
-    Locataire findByEmail(String email);
 }

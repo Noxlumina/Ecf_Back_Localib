@@ -9,10 +9,13 @@ import java.util.List;
 @RequestMapping("/locataires")
 public class LocataireController {
 
-    private LocataireServiceImpl locataireService;
-    public LocataireController(LocataireServiceImpl locataireService) {
+    private LocataireService locataireService;
+    private LocataireRepository locataireRepository;
+    public LocataireController(LocataireService locataireService,LocataireRepository locataireRepository) {
         this.locataireService = locataireService;
+        this.locataireRepository = locataireRepository;
     }
+
     @GetMapping
     public List<Locataire> findAll() {
         return locataireService.findAll();
@@ -31,6 +34,6 @@ public class LocataireController {
     }
     @GetMapping("email/{email}")
     public Locataire findByEmail(@PathVariable String email) {
-        return locataireService.findByEmail(email);
+        return locataireRepository.findByEmail(email);
     }
 }

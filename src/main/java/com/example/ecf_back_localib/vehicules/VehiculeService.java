@@ -32,11 +32,6 @@ public interface VehiculeService {
      */
     void deleteById(String id);
 
-    /**
-     * Méthode permettant de trouver un locataire à partir de son email
-     * @param immatriculation
-     * @return un locataire
-     */
-    Locataire findByImmatriculation(String immatriculation);
+
 
 }

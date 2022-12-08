@@ -4,3 +4,5 @@ spring:
       host=localhost
       port=27017
       database=comp
+server:
+  port: 8090

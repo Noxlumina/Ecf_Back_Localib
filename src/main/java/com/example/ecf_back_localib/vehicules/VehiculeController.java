@@ -10,9 +10,11 @@ import java.util.List;
 @CrossOrigin
 @RequestMapping("/vehicules")
 public class VehiculeController {
-    private VehiculeServiceImpl vehiculeService;
-    public VehiculeController(VehiculeServiceImpl vehiculeService) {
+    private VehiculeService vehiculeService;
+    private VehiculeRepository vehiculeRepository;
+    public VehiculeController(VehiculeService vehiculeService,VehiculeRepository vehiculeRepository) {
         this.vehiculeService = vehiculeService;
+        this.vehiculeRepository = vehiculeRepository;
     }
     @GetMapping
     public List<Vehicule> findAll() {
@@ -33,7 +35,7 @@ public class VehiculeController {
 
     @GetMapping("immatriculation/{immatriculation}")
     public Locataire findByEmail(@PathVariable String immatriculation) {
-        return vehiculeService.findByImmatriculation(immatriculation);
+        return vehiculeRepository.findByImmatriculation(immatriculation);
     }
 }
 

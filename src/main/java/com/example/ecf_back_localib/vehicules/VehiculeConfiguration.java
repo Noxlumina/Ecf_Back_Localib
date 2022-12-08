@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class VehiculeConfiguration {
     @Bean
-    public VehiculeService vehiculeService(VehiculeRepository vehiculeRepository, VehiculeService vehiculeService){
-        return new VehiculeServiceImpl(vehiculeRepository,vehiculeService);
+    public VehiculeService vehiculeService(VehiculeRepository vehiculeRepository){
+        return new VehiculeServiceImpl(vehiculeRepository);
     }
 }
