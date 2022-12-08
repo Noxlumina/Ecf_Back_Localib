@@ -6,9 +6,10 @@ public interface LocataireService {
 
     /**
      * Méthode permettant de rechercher tous les locataires
+     * @param page,size page le numéro de la page,size le nombre d'élément afficher par page
      * @return la liste de tous les locataires
      */
-    List<Locataire> findAll();
+    List<Locataire> findAll(int page, int size);
 
     /**
      * Méthode permetant d'enregistrer un nouveau locataire

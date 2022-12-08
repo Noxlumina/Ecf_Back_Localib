@@ -3,11 +3,13 @@ package com.example.ecf_back_localib.vehicules;
 import com.example.ecf_back_localib.locataires.Locataire;
 import com.example.ecf_back_localib.locataires.LocataireController;
 import com.example.ecf_back_localib.locataires.LocataireService;
+import com.example.ecf_back_localib.vehicules.dto.VehiculeMinimumDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -39,9 +41,8 @@ public class VehiculeController {
     }
 
     @GetMapping("immatriculation/{immatriculation}")
-    public Locataire findByEmail(@PathVariable String immatriculation) {
-        log.info("recherche vehicule à partir de son immatriculation :" + immatriculation);
-        return vehiculeRepository.findByImmatriculation(immatriculation);
+    public VehiculeMinimumDTO findByImmatriculation(@PathVariable String immatriculation) {
+        return vehiculeService.findByImmatriculationDTO(immatriculation);
     }
 }
 

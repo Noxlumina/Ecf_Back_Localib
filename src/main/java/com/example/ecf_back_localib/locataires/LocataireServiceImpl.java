@@ -2,6 +2,7 @@ package com.example.ecf_back_localib.locataires;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -21,10 +22,11 @@ public class LocataireServiceImpl implements LocataireService {
 
 
     @Override
-    public List<Locataire> findAll() {
+    public List<Locataire> findAll(int page, int size) {
         log.info("recherche de tous les utilisateurs");
-        return locataireRepository.findAll();
+        return locataireRepository.findAll(PageRequest.of(page, size)).toList();
     }
+
 
     @Override
     public Locataire save(Locataire entity) {

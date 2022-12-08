@@ -21,7 +21,7 @@ public class LocataireController {
 
     @GetMapping
     public List<Locataire> findAll() {
-        return locataireService.findAll();
+        return locataireService.findAll(0, 10);
     }
     @PostMapping
     public Locataire save(@RequestBody Locataire entity) {

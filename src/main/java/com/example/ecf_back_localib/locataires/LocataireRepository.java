@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
+import java.util.List;
+
 
 public interface LocataireRepository extends MongoRepository<Locataire,String> {
 
@@ -15,5 +17,17 @@ public interface LocataireRepository extends MongoRepository<Locataire,String> {
      */
     Locataire findByEmail(String email);
 
+    /**
+     * Méthode permettant de trouver des locataires à partir de leur nom
+     * @param nom
+     * @return une liste de locataires
+     */
+    List<Locataire> findByNom(String nom);
 
+    /**
+     * Méthode permettant de trouver des locataires à partir de leur prénom
+     * @param prenom
+     * @return une liste de locataires
+     */
+    List<Locataire> findByPrenom(String prenom);
 }

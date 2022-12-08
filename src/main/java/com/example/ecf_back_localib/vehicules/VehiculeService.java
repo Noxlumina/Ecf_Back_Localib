@@ -1,10 +1,14 @@
 package com.example.ecf_back_localib.vehicules;
 
 import com.example.ecf_back_localib.locataires.Locataire;
+import com.example.ecf_back_localib.vehicules.dto.VehiculeMinimumDTO;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface VehiculeService {
+
+
     /**
      * Méthode permettant de rechercher tous les véhicules
      * @return la liste de tous les véhicules
@@ -31,7 +35,11 @@ public interface VehiculeService {
      * @param id
      */
     void deleteById(String id);
-
-
+    /**
+     * Méthode permettant de trouver un véhicule à partir de son immatriculation
+     * @param immatriculation
+     * @return un véhicule
+     */
+    VehiculeMinimumDTO findByImmatriculationDTO(String immatriculation);
 
 }
