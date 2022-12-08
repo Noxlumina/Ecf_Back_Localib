@@ -1,5 +1,6 @@
 package com.example.ecf_back_localib.vehicules;
 
+import com.example.ecf_back_localib.locataires.Locataire;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,5 +44,11 @@ public class VehiculeServiceImpl implements VehiculeService {
     public void deleteById(String id) {
         log.info("suppression du véhicule par son id -> id: " +id);
         vehiculeService.deleteById(id);
+    }
+
+    @Override
+    public Locataire findByImmatriculation(String immatriculation) {
+        log.info("recherche d'un locataire à partir de son email-> email: " +immatriculation);
+        return vehiculeService.findByImmatriculation(immatriculation);
     }
 }

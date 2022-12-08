@@ -33,8 +33,8 @@ public interface LocataireService {
 
     /**
      * Méthode permettant de trouver un locataire à partir de son email
-     * @param id
+     * @param email
      * @return un locataire
      */
-    Locataire findByEmail(String id);
+    Locataire findByEmail(String email);
 }

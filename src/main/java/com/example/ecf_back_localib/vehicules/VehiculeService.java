@@ -1,5 +1,7 @@
 package com.example.ecf_back_localib.vehicules;
 
+import com.example.ecf_back_localib.locataires.Locataire;
+
 import java.util.List;
 
 public interface VehiculeService {
@@ -29,5 +31,12 @@ public interface VehiculeService {
      * @param id
      */
     void deleteById(String id);
+
+    /**
+     * Méthode permettant de trouver un locataire à partir de son email
+     * @param immatriculation
+     * @return un locataire
+     */
+    Locataire findByImmatriculation(String immatriculation);
 
 }
