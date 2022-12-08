@@ -10,6 +10,8 @@ Il peut effectuer une location durant une période donnée d'un véhicule avec u
 
 Il nous a été demandé de faire le back avec spring boot soit en jpa (mySql) ou avec mongoDB.
 
+Lien du repository pour le front: https://github.com/Noxlumina/ECF_front_spring_mongo
+
 ## Prérequis
 
 - Java 11+
@@ -40,4 +42,4 @@ Pour lancer l'application, il faut se placer dans le dossier racine et lancer la
 
 ### Lancement de l'application avec IntelliJ
 
-Pour laancer l'application avec un IDE, lancer la class `MycompApplication`
+Pour lancer l'application avec un IDE, lancer la class `MycompApplication`
