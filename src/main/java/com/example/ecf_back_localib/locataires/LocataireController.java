@@ -1,5 +1,7 @@
 package com.example.ecf_back_localib.locataires;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +13,7 @@ public class LocataireController {
 
     private LocataireService locataireService;
     private LocataireRepository locataireRepository;
+    private static final Logger log = LoggerFactory.getLogger(LocataireController.class);
     public LocataireController(LocataireService locataireService,LocataireRepository locataireRepository) {
         this.locataireService = locataireService;
         this.locataireRepository = locataireRepository;
@@ -34,6 +37,7 @@ public class LocataireController {
     }
     @GetMapping("email/{email}")
     public Locataire findByEmail(@PathVariable String email) {
+        log.info("recherche locataire à partir de son email :" + email);
         return locataireRepository.findByEmail(email);
     }
 }
