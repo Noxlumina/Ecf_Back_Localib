@@ -1,11 +1,14 @@
 package com.example.ecf_back_localib.locations;
 
+import com.example.ecf_back_localib.vehicules.Vehicule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.beans.Transient;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.util.List;
 
 public class LocationServiceImpl implements LocationService {
@@ -31,9 +34,22 @@ public class LocationServiceImpl implements LocationService {
         } else {
             log.info("enregistrement d'une nouvelle location");
         }
+        LocalDateTime start = entity.getDate_de_debut();
+        LocalDateTime end = entity.getDate_de_fin();
+        Double coutJournalier = entity.vehicule.getCout();
+        entity.setPrix(getPrix(start,end,coutJournalier));
         entity.setDateModification(LocalDateTime.now());
         return locationRepository.save(entity);
     }
+
+
+    public  Double getPrix(LocalDateTime start, LocalDateTime end, Double coutJournalier) {
+        System.out.println(start);
+        System.out.println(end);
+        Period p = Period.between(start.toLocalDate(), end.toLocalDate());
+        Integer jours = p.getDays();
+        Double prix= coutJournalier*jours;
+        return  prix;}
 
     @Override
     public Location findById(String id) {
