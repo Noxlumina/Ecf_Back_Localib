@@ -22,6 +22,8 @@ Il nous a été demandé de faire le back avec spring boot soit en jpa (mySql) o
 
 ### Base de données
 
+Si aucune base de données est présente localement effectuer la démarche suivante:
+
 Pour lancer la base de données, il faut se placer dans le dossier `docker` et lancer la commande suivante :
 
 ```bash
